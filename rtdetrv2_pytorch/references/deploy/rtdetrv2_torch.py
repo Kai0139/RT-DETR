@@ -8,8 +8,11 @@ import torchvision.transforms as T
 import numpy as np 
 from PIL import Image, ImageDraw
 
-from src.core import YAMLConfig
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 
+from src.core import YAMLConfig
 
 def draw(images, labels, boxes, scores, thrh = 0.6):
     for i, im in enumerate(images):
